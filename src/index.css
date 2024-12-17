@@ -24,3 +24,21 @@ body {
 .container button:active{
     transform: scale(0.95);
 }
+.container1{
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+.actived a.active{
+    background-color: aqua;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.actived a{
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+.actived a:hover{
+    background-color: aliceblue;
+}
