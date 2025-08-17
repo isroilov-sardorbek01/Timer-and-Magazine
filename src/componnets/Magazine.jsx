@@ -51,6 +51,10 @@ function Magazine() {
         });
     }
 
+    function onClear() {
+        setCart([]);
+    }
+    
     return (
         <div className="mt-20">
             <div className="container1">
@@ -59,7 +63,10 @@ function Magazine() {
                     {allMenu.length > 0 &&
                         allMenu.map((data) => {
                             return (
-                                <div className="p-4 text-center text-white bg-blue-400 rounded-md menu-item" key={data.id}>
+                                <div
+                                    className="p-4 text-center text-white bg-blue-400 rounded-md menu-item"
+                                    key={data.id}
+                                >
                                     <h2 className="text-[50px]">{data.name}</h2>
                                     <p className="">Price: ${data.price}</p>
                                     <div className="quantity-controls">
@@ -79,13 +86,24 @@ function Magazine() {
                             );
                         })}
                 </div>
+                <button
+                    onClick={() => {
+                        onClear()
+                    }}
+                    className="p-3 bg-blue-300 rounded-md"
+                >
+                    Clear
+                </button>
                 <div className="cart">
                     <h2 className="text-[30px]">Cart</h2>
                     {cart.length > 0 ? (
                         <div>
                             <ul className="flex flex-wrap gap-4">
                                 {cart.map((item) => (
-                                    <li key={item.id} className="w-[150px] p-4 rounded-md bg-blue-400">
+                                    <li
+                                        key={item.id}
+                                        className="w-[150px] p-4 rounded-md bg-blue-400"
+                                    >
                                         <span>{item.name}</span>
                                         <span> x{item.quantity}</span>
                                         <span>
